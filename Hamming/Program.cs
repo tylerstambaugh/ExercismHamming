@@ -25,6 +25,23 @@ public class Hamming
 {
     public int Distance(string firstStrand, string secondStrand)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        int count = 0;
+
+        if(firstStrand.Length != secondStrand.Length)
+        {
+            throw new ArgumentException(firstStrand+ " and " + secondStrand); 
+        }
+        else
+        {
+            for(int i = 0; i < firstStrand.Length; i++)
+            {
+                if (firstStrand[i] != secondStrand[i])
+                {
+                    count++;
+                }
+            }
+        }
+
+        return count;
     }
 }
